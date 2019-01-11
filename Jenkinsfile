@@ -10,6 +10,9 @@ pipeline {
       }
     }
     stage('Test') {
+      environment {
+        PATH = '$PATH:/opt/miniconda2/bin'
+      }
       parallel {
         stage('Test') {
           steps {
