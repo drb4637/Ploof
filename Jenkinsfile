@@ -6,14 +6,10 @@ pipeline {
         stage('Build') {
           steps {
             echo 'Building'
+            sh 'PATH="/opt/miniconda2/bin:$PATH"'
           }
         }
-        stage('test if the shell script is working') {
-          steps {
-            sh 'echo "does this work"'
-          }
-        }
-        stage('') {
+        stage('error') {
           steps {
             sh 'conda'
           }
