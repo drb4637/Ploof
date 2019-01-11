@@ -2,14 +2,11 @@ pipeline {
   agent any
 
 	environment {
-	PATH = '$PATH:/opt/miniconda2/bin'
+	PATH = '/opt/miniconda2/bin:$PATH'
 	}
 
   stages {
     stage('Build') {
-      environment {
-        PATH = '$PATH:/opt/miniconda2/bin'
-      }
       steps {
         echo 'Building'
         sh 'ls'
