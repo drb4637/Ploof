@@ -10,6 +10,9 @@ pipeline {
       steps {
         echo 'Testing'
       }
+      steps {
+        echo 'Testing again'
+      }
     }
     stage('Deploy') {
       steps {
