@@ -8,9 +8,9 @@ pipeline {
             echo 'Building'
           }
         }
-        stage('') {
+        stage('test if the shell script is working') {
           steps {
-            sh 'conda activate base'
+            sh 'echo "does this work"'
           }
         }
       }
