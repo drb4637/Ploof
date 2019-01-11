@@ -7,8 +7,6 @@ pipeline {
       }
       steps {
         echo 'Building'
-        sh 'PATH="/opt/miniconda2/bin:$PATH"'
-        sh 'cd /opt/miniconda2/bin'
         sh 'ls'
         sh 'conda'
       }
