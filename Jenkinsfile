@@ -7,8 +7,23 @@ pipeline {
       }
     }
     stage('Test') {
-      steps {
-        echo 'Testing'
+      parallel {
+        stage('Test') {
+          steps {
+            echo 'Testing'
+          }
+        }
+        stage('') {
+          steps {
+            echo 'Gonna try and run a test'
+          }
+        }
+        stage('') {
+          steps {
+            sh '''pytest test.py
+'''
+          }
+        }
       }
     }
     stage('Deploy') {
