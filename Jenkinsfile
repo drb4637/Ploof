@@ -7,9 +7,11 @@ pipeline {
 
   stages {
     stage('Build') {
+      environment {
+        PATH = '$PATH:/opt/miniconda2/bin'
+      }
       steps {
         echo 'Building'
-        sh 'cd /opt/miniconda2/bin'
         sh 'ls'
         sh 'conda'
       }
