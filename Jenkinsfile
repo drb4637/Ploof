@@ -2,18 +2,10 @@ pipeline {
   agent any
   stages {
     stage('Build') {
-      parallel {
-        stage('Build') {
-          steps {
-            echo 'Building'
-            sh 'PATH="/opt/miniconda2/bin:$PATH"'
-          }
-        }
-        stage('error') {
-          steps {
-            sh 'conda'
-          }
-        }
+      steps {
+        echo 'Building'
+        sh 'PATH="/opt/miniconda2/bin:$PATH"'
+        sh 'conda'
       }
     }
     stage('Test') {
