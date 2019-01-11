@@ -2,8 +2,17 @@ pipeline {
   agent any
   stages {
     stage('Build') {
-      steps {
-        echo 'Building'
+      parallel {
+        stage('Build') {
+          steps {
+            echo 'Building'
+          }
+        }
+        stage('') {
+          steps {
+            sh 'conda activate base'
+          }
+        }
       }
     }
     stage('Test') {
@@ -13,12 +22,12 @@ pipeline {
             echo 'Testing'
           }
         }
-        stage('') {
+        stage('error') {
           steps {
             echo 'Gonna try and run a test'
           }
         }
-        stage('') {
+        stage('error') {
           steps {
             sh '''pytest test.py
 '''
