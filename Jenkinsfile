@@ -13,6 +13,11 @@ pipeline {
             sh 'echo "does this work"'
           }
         }
+        stage('') {
+          steps {
+            sh 'conda'
+          }
+        }
       }
     }
     stage('Test') {
