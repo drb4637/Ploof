@@ -1,19 +1,20 @@
 pipeline {
   agent any
+
+	environment {
+	PATH = '$PATH:/opt/miniconda2/bin'
+	}
+
   stages {
     stage('Build') {
       steps {
         echo 'Building'
-        sh 'PATH="/opt/miniconda2/bin:$PATH"'
         sh 'cd /opt/miniconda2/bin'
         sh 'ls'
         sh 'conda'
       }
     }
     stage('Test') {
-      environment {
-        PATH = '$PATH:/opt/miniconda2/bin'
-      }
       parallel {
         stage('Test') {
           steps {
