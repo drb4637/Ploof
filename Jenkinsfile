@@ -17,7 +17,7 @@ pipeline {
         stage('error') {
           steps {
             sh '''
-pytest --verbose --junit-xml test.xml test.py'''
+pytest --verbose --junit-xml build/test.xml test.py'''
           }
         }
       }
