@@ -5,7 +5,7 @@ pipeline {
       steps {
         echo 'Building'
         sh 'echo $PATH'
-        sh ' conda update --all -y'
+        sh ' pytest'
         sh '''conda install pytest -y
 '''
       }
