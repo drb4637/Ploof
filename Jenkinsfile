@@ -4,7 +4,7 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Building'
-        sh 'pip install pytest '
+        sh 'sudo pip install pytest '
       }
     }
     stage('Test') {
