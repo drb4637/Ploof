@@ -6,7 +6,7 @@ pipeline {
         echo 'Building'
         sh 'ls'
         sh 'conda'
-        sh 'conda install pytest -y'
+        sh 'python --version'
       }
     }
     stage('Test') {
