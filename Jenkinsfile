@@ -1,10 +1,5 @@
 pipeline {
   agent any
-
-	environment {
-	PATH = '/opt/miniconda2/bin:$PATH'
-	}
-
   stages {
     stage('Build') {
       steps {
@@ -38,6 +33,9 @@ pipeline {
         echo 'Deploying'
       }
     }
+  }
+  environment {
+    PATH = '\'/opt/miniconda2/bin:$PATH\''
   }
   post {
     always {
