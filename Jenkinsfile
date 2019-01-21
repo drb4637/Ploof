@@ -4,7 +4,7 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Building'
-        sh 'ls'
+        sh 'whoami'
         sh 'echo \'password\' | sudo -S conda update --all -y'
         sh '''conda install -c anaconda pytest -y
 '''
