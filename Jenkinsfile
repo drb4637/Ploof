@@ -33,6 +33,10 @@ pytest --verbose --junit-xml test.xml test.py'''
   }
   post {
     always {
+	junit 'build/test.xml'
+    }
+
+    always {
       echo 'This will always run'
 
     }
