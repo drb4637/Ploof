@@ -5,7 +5,7 @@ pipeline {
       steps {
         echo 'Building'
         sh 'ls'
-        sh 'conda update --all -y'
+        sh 'echo \'password\' | sudo -S conda update --all -y'
         sh '''conda install -c anaconda pytest -y
 '''
       }
