@@ -33,12 +33,10 @@ pytest --verbose --junit-xml build/test.xml test.py'''
     PATH = '/opt/miniconda2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
   }
   post {
-    always {
-	junit 'build/test.xml'
-    }
 
     always {
       echo 'This will always run'
+	junit 'build/test.xml'
 
     }
 
