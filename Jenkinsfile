@@ -35,7 +35,7 @@ pipeline {
     }
   }
   environment {
-    PATH = '$PATH + ":/opt/miniconda2/bin"'
+    PATH = '/opt/miniconda2/bin:/bin/sbin'
   }
   post {
     always {
