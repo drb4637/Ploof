@@ -5,6 +5,7 @@ pipeline {
       steps {
         echo 'Building'
         sh 'echo password | sudo -S pip install pytest '
+        sh 'pwd'
       }
     }
     stage('Test') {
@@ -17,7 +18,7 @@ pipeline {
         stage('error') {
           steps {
             sh '''
-pytest --verbose --junit-xml test.xml test.py'''
+pytest --verbose --junit-xml build/test.xml test.py'''
           }
         }
       }
