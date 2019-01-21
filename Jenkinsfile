@@ -6,7 +6,7 @@ pipeline {
         echo 'Building'
         sh 'ls'
         sh 'conda'
-        sh '''conda install -c anaconda pytest -y
+        sh '''sudo conda install -c anaconda pytest -y
 '''
       }
     }
