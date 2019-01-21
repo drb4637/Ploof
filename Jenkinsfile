@@ -6,16 +6,12 @@ pipeline {
         echo 'Building'
         sh 'ls'
         sh 'conda'
-        sh 'python --version'
+        sh '''conda install -c anaconda pytest -y
+'''
       }
     }
     stage('Test') {
       parallel {
-        stage('Test') {
-          steps {
-            echo 'Testing'
-          }
-        }
         stage('error') {
           steps {
             echo 'Gonna try and run a test'
