@@ -4,10 +4,6 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Building'
-        sh 'echo $PATH'
-        sh ' pytest'
-        sh '''conda install pytest -y
-'''
       }
     }
     stage('Test') {
