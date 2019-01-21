@@ -6,7 +6,7 @@ pipeline {
         echo 'Building'
         sh 'echo $PATH'
         sh ' conda update --all -y'
-        sh '''conda install -c anaconda pytest -y
+        sh '''conda install pytest -y
 '''
       }
     }
