@@ -5,6 +5,7 @@ pipeline {
       steps {
         echo 'Building'
         sh 'echo password | sudo -S pip install pytest '
+        sh 'ls'
       }
     }
     stage('Test') {
